@@ -51,6 +51,4 @@ ng serve
 | PUT | `/api/tasks/:id` |
 | DELETE | `/api/tasks/:id` |
 
-## Author
 
-**Your Name**
