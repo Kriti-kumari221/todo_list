@@ -1,0 +1,13 @@
+<nav class="navbar glass-panel">
+  <div class="nav-brand">
+    <span class="icon">✨</span>
+    <h1>TaskFlow</h1>
+  </div>
+  <div class="nav-actions">
+    <div class="user-profile">
+      <div class="avatar">{{ userName.charAt(0).toUpperCase() }}</div>
+      <span class="user-name">Hi, {{ userName }}</span>
+    </div>
+    <button class="btn-danger logout-btn" (click)="logout()">Logout</button>
+  </div>
+</nav>

@@ -1,0 +1,51 @@
+<div class="tasks-container">
+  <div class="tasks-header">
+    <h2>Your Tasks</h2>
+    <span class="task-count">{{ tasks.length }} {{ tasks.length === 1 ? 'task' : 'tasks' }}</span>
+  </div>
+
+  <div class="progress-container" *ngIf="tasks.length > 0">
+    <div class="progress-header">
+      <span class="progress-label">Completion Progress</span>
+      <span class="progress-text">{{ progressPercentage }}%</span>
+    </div>
+    <div class="progress-bar-bg">
+      <div class="progress-bar-fill" [style.width.%]="progressPercentage"></div>
+    </div>
+  </div>
+
+  <div class="empty-state glass-panel" *ngIf="tasks.length === 0">
+    <div class="empty-icon">📝</div>
+    <h3>No tasks yet</h3>
+    <p>Add a task using the form to get started.</p>
+  </div>
+
+  <div class="task-list" *ngIf="tasks.length > 0">
+    <div class="task-card glass-panel" *ngFor="let task of tasks" [class.completed]="task.completed">
+      
+      <div class="task-checkbox" (click)="toggleComplete(task)">
+        <div class="checkbox-inner" [class.checked]="task.completed">
+          <span *ngIf="task.completed">✓</span>
+        </div>
+      </div>
+
+      <div class="task-content">
+        <h4 class="task-title">{{ task.title }}</h4>
+        <p class="task-desc" *ngIf="task.description">{{ task.description }}</p>
+        <div class="task-meta">
+          <span class="task-date" *ngIf="task.createdAt">Created {{ formatDate(task.createdAt) }}</span>
+        </div>
+      </div>
+
+      <div class="task-actions">
+        <button class="btn-icon edit-btn" (click)="editTask(task)" title="Edit">
+          ✎
+        </button>
+        <button class="btn-icon delete-btn" (click)="deleteTask(task._id)" title="Delete">
+          🗑
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>

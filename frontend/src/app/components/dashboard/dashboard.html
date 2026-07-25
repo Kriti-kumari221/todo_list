@@ -1,0 +1,29 @@
+<div class="dashboard-container">
+  <app-navbar></app-navbar>
+  
+  <main class="dashboard-content">
+    <div class="layout-grid">
+      <div class="left-panel">
+        <app-task-form 
+          [taskToEdit]="taskToEdit"
+          (taskAdded)="onTaskAdded($event)"
+          (taskUpdated)="onTaskUpdated($event)"
+          (cancelEditEvent)="cancelEdit()">
+        </app-task-form>
+      </div>
+      
+      <div class="right-panel">
+        <div *ngIf="loading" class="loading-state">
+          <div class="spinner"></div>
+          <p>Loading tasks...</p>
+        </div>
+        <app-task-list 
+          *ngIf="!loading"
+          [tasks]="tasks"
+          (editEvent)="editTask($event)"
+          (deleteEvent)="onTaskDeleted($event)">
+        </app-task-list>
+      </div>
+    </div>
+  </main>
+</div>

@@ -1,0 +1,192 @@
+.tasks-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tasks-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tasks-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.task-count {
+  background: rgba(99, 102, 241, 0.2);
+  color: #a5b4fc;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.empty-state {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.empty-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+  opacity: 0.8;
+}
+
+.empty-state h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.empty-state p {
+  color: var(--text-muted);
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.task-card {
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.task-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.task-checkbox {
+  cursor: pointer;
+  padding-top: 2px;
+}
+
+.checkbox-inner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--text-muted);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.checkbox-inner.checked {
+  background: var(--success);
+  border-color: var(--success);
+  color: white;
+}
+
+.task-content {
+  flex: 1;
+}
+
+.task-title {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  transition: color 0.3s;
+}
+
+.task-card.completed .task-title {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.task-desc {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.task-meta {
+  font-size: 12px;
+  color: rgba(148, 163, 184, 0.6);
+}
+
+.task-actions {
+  display: flex;
+  gap: 8px;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+.task-card:hover .task-actions {
+  opacity: 1;
+}
+
+.btn-icon {
+  background: transparent;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+  color: var(--text-muted);
+}
+
+.edit-btn:hover {
+  background: rgba(99, 102, 241, 0.2);
+  color: #a5b4fc;
+}
+
+.delete-btn:hover {
+  background: rgba(239, 68, 68, 0.2);
+  color: #fca5a5;
+}
+
+.progress-container {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 10px;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.progress-label {
+  color: #a5b4fc;
+  font-weight: 500;
+}
+
+.progress-text {
+  font-weight: bold;
+  color: white;
+}
+
+.progress-bar-bg {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #6366f1, #d946ef);
+  border-radius: 4px;
+  transition: width 0.5s ease-in-out;
+}
